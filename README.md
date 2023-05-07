@@ -3,7 +3,7 @@
 [![Main](https://github.com/armada-alliance/p2p-topo/actions/workflows/main.yml/badge.svg)](https://github.com/armada-alliance/p2p-topo/actions/workflows/main.yml)
 
 ## `What is this?`
-Just a list of peer-2-peer relays that can be used by SPOs in their Topology files. Feel free to add your own relays to the list by submitting a PR.
+Just a list of peer-2-peer relays that can be used by SPOs in their Topology files. Feel free to add your own relays to the list [below](#current-relays) by submitting a PR.
 
 ## `Current relays`
 
