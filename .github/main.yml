@@ -1,0 +1,30 @@
+name: Main
+on:
+  push: 
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+    
+  workflow_dispatch:
+jobs:
+  update_plot:
+    name: Main
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: '3.9'
+          cache: 'pip'
+      - name: Install Dependencies
+        run: pip install -r requirements.txt
+      - name: Main
+        env: 
+          WAEL_PERSONAL_TOKEN: ${{ secrets.WAEL_PERSONAL_TOKEN }}
+        run: python3 md_2_json.py
+      - name: Commit and Push Changes
+        run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
