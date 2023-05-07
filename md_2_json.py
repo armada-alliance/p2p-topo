@@ -18,7 +18,7 @@ g = Github(personal_access_token)
 try:   
     user = g.get_user()
     print(user.name)
-except ApiError as e:
+except Exception as e:
     print(e)
 
 # Read the Markdown file and extract the table as a string
