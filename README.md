@@ -1,9 +1,9 @@
-# p2p-topo
+# ***p2p-topology***
 
-## What is this?
-Just a list of p2p relays that can be used by SPOs.
+## `What is this?`
+Just a list of peer-2-peer relays that can be used by SPOs in their Topology files. Feel free to add your own relays to the list by submitting a PR.
 
-## Current relays
+## `Current relays`
 
 | Address | Port | Name |
 |---------|------|------|
