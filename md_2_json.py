@@ -49,9 +49,22 @@ for index, row in df.iterrows():
     if row['Address'].isspace() == False and row['Port'].isspace() == False:
         if row['Address'] != "" and row['Port'] != "":
             current_df = pd.concat([current_df, row.to_frame().transpose()])
+            
+# Upload the DataFrame as a Json file to the github repo
+# Get the repo
+repo = g.get_repo("armada-alliance/p2p-topo")
+
+# Get the file
+file = repo.get_contents("p2p_topo.json")
 
 # Save the DataFrame to a Json file
 json_data = current_df.to_dict(orient='records')
 
-with open('p2p_topo.json', 'w') as f:
-    json.dump(json_data, f, separators=(',', ':'))
+# replace the file with the new json data
+repo.update_file(file.path, "update p2p_topo.json", json.dumps(json_data), file.sha)
+
+# # Save the DataFrame to a Json file
+# json_data = current_df.to_dict(orient='records')
+
+# with open('p2p_topo.json', 'w') as f:
+#     json.dump(json_data, f, separators=(',', ':'))
