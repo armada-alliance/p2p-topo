@@ -61,7 +61,7 @@ file = repo.get_contents("p2p_topo.json")
 json_data = current_df.to_dict(orient='records')
 
 # replace the file with the new json data
-repo.update_file(file.path, "update p2p_topo.json", json.dumps(json_data), file.sha)
+repo.update_file(file.path, "update p2p_Topo.json", json.dumps(json_data), file.sha)
 
 # # Save the DataFrame to a Json file
 # json_data = current_df.to_dict(orient='records')
