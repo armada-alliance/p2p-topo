@@ -55,16 +55,10 @@ for index, row in df.iterrows():
 repo = g.get_repo("armada-alliance/p2p-topo")
 
 # Get the file
-file = repo.get_contents("p2p_topo.json")
+file = repo.get_contents("/p2p_Topo.json")
 
 # Save the DataFrame to a Json file
 json_data = current_df.to_dict(orient='records')
 
 # replace the file with the new json data
 repo.update_file(file.path, "update p2p_Topo.json", json.dumps(json_data), file.sha)
-
-# # Save the DataFrame to a Json file
-# json_data = current_df.to_dict(orient='records')
-
-# with open('p2p_topo.json', 'w') as f:
-#     json.dump(json_data, f, separators=(',', ':'))
