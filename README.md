@@ -9,7 +9,7 @@ Just a list of peer-2-peer relays that can be used by SPOs in their Topology fil
 
 | Address | Port | Name |
 |---------|------|------|
-| relay2.stakepool.cc | 6002 | token-mexico | 
+| relay1.stakepool.cc | 6001 | token-mexico | 
 | relay.armada-alliance.com | 6002 | armada-ny |
 | sully.crabdance.com | 6000 | radar-us |
 | beadapool.ddns.net | 6000 | beada-belgium |
