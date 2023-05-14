@@ -60,5 +60,10 @@ file = repo.get_contents("/p2p_Topo.json")
 # Save the DataFrame to a Json file
 json_data = current_df.to_json(orient='records')
 
-# Replace the file with the new JSON data
-repo.update_file(file.path, "Update p2p_Topo.json", json_data, file.sha)
+# Check if the current content matches the new content
+if file.decoded_content.decode("utf-8") != json_data:
+    # Replace the file with the new JSON data
+    repo.update_file(file.path, "Update p2p_Topo.json", json_data, file.sha)
+    print("File updated successfully!")
+else:
+    print("No changes detected. File remains unchanged.")
