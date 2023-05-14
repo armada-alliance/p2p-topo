@@ -58,7 +58,7 @@ repo = g.get_repo("armada-alliance/p2p-topo")
 file = repo.get_contents("/p2p_Topo.json")
 
 # Save the DataFrame to a Json file
-json_data = current_df.to_dict(orient='records')
+json_data = current_df.to_json(orient='records')
 
-# replace the file with the new json data
-repo.update_file(file.path, "update p2p_Topo.json", json.dumps(json_data), file.sha)
+# Replace the file with the new JSON data
+repo.update_file(file.path, "Update p2p_Topo.json", json_data, file.sha)
