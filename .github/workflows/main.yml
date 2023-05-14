@@ -1,21 +1,18 @@
 name: Main
 on:
+  schedule:
+    - cron: '60 * * * *'
   push: 
     branches: [ main ]
   pull_request:
     branches: [ main ]
-    types:
-      - "closed"
     
   workflow_dispatch:
 jobs:
-  if_merged:
-    name: Main
-    if: github.event.pull_request.merged == true
+  update_plot:
+    name: Testing
     runs-on: ubuntu-latest
     steps:
-      - run: |
-          echo The PR was merged
       - name: Checkout
         uses: actions/checkout@v3
       - name: Setup Python
@@ -32,31 +29,4 @@ jobs:
       - name: Commit and Push Changes
         run: |
           git config --local user.email "actions@github.com"
-          git config --local user.name "GitHub Actions" 
-
-
-
-
-
-
-  # update_plot:
-  #   name: Main
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: Checkout
-  #       uses: actions/checkout@v3
-  #     - name: Setup Python
-  #       uses: actions/setup-python@v3
-  #       with:
-  #         python-version: '3.9'
-  #         cache: 'pip'
-  #     - name: Install Dependencies
-  #       run: pip install -r requirements.txt
-  #     
-  #       env: 
-  #         WAEL_PERSONAL_TOKEN: ${{ secrets.WAEL_PERSONAL_TOKEN }}
-  #       run: python3 md_2_json.py
-  #     - name: Commit and Push Changes
-  #       run: |
-  #         git config --local user.email "actions@github.com"
-  #         git config --local user.name "GitHub Actions"
+          git config --local user.name "GitHub Actions"
