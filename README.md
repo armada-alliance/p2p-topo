@@ -17,6 +17,7 @@ Just a list of peer-2-peer relays that can be used by SPOs in their Topology fil
 | 192.199.243.110 | 6000 | bbhmm-3-colorado |
 | r1.seaside-staking.best | 6006 | seaside-staking |
 | otg-relay-1.adamantium.online | 6001 | OTG USA |
+| r1.arrk.live | 3001 | ARRK | TX
 |  |  |  |
 |  |  |  |
 |  |  |  |
